@@ -5,10 +5,10 @@ const passport = require('passport');
 const Keys = require('./config/keys');
 const User = require('./models/User');
 //no la declaramos como una constante porque como no lo vamos a utilizar en el codigo ,
-//solo es una afirmacion para que se pueda utlizar
+//solo es una afirmacion para que se pueda utilizar
 require('./services/passport');
 
-// Siempre a tener encuenta en la barra del localhost donde apuntala collection 
+// Siempre a tener encuenta en la barra del localhost donde apunta la coleccion 
 mongoose.connect('mongodb://localhost:27017/users',
     { useNewUrlParser: true, useUnifiedTopology: true },
     (err, res) => {
@@ -21,7 +21,7 @@ mongoose.connect('mongodb://localhost:27017/users',
 
 const server = express();
 
-// Aqui indicamos cuando queremos que epxire nuestra clave y que la codifique con el metodo que le pasamos
+// Aqui indicamos cuando queremos que expire nuestra clave y que la codifique con el metodo que le pasamos
 server.use(
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000, // Esto equivael a 30 dias ya que lo pasamos a milisegundos
